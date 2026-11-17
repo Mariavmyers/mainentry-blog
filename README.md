@@ -11,7 +11,7 @@ Front matter used by each post:
 title: "English title"
 title_es: "Título en español"
 description: "One-sentence summary for Google (150-160 characters)."
-categories: [ai-visibility]   # one of: ai-visibility, online-safety, ai-tools, make-money-with-ai, adhd-focus, ai-news
+categories: [ai-visibility]   # one of: ai-visibility, online-safety, ai-tools, make-money-with-ai, ai-news, adhd-focus, entrepreneurship
 has_spanish: true
 ---
 ```
