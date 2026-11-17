@@ -1,0 +1,28 @@
+title: "MainEntry Journal"
+tagline: "AI, small business & smart growth — in English y en Español"
+description: "Practical, plain-language articles on AI, getting found on Google and ChatGPT, online safety, ADHD & focus, and making money with AI. By Maria Myers, MainEntry LLC."
+author: "Maria Myers"
+email: "hello@mainentry.net"
+url: "https://mariavmyers.github.io"
+baseurl: "/mainentry-blog"
+lang: en
+timezone: America/Chicago
+community_url: "https://community.mainentry.net"
+permalink: /:categories/:title/
+markdown: kramdown
+future: false
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: "Maria Myers"
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,33 @@
+---
+layout: default
+title: "MainEntry Journal — AI, small business & smart growth"
+---
+<section class="home-hero">
+  <div class="wrap">
+    <p class="hero-kicker">English · Español</p>
+    <h1>Use AI to grow your business — <span class="hl-orange">without the hype.</span></h1>
+    <p class="hero-sub">Plain-language articles on getting found on Google &amp; ChatGPT, staying safe online, working with ADHD, and real ways to earn with AI. <span class="es">Artículos claros sobre IA, negocios y crecimiento.</span></p>
+    <div class="hero-actions">
+      <a class="btn" href="{{ site.community_url }}" target="_blank" rel="noopener">Join the free community</a>
+      <a class="btn btn-outline-light" href="#latest">Read the latest ↓</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="latest">
+  <h2 class="section-title">Latest articles <span>· Artículos recientes</span></h2>
+  {% if site.posts.size == 0 %}
+  <p>First article coming soon.</p>
+  {% endif %}
+  <div class="grid">
+    {% for post in site.posts %}
+    <a class="card" href="{{ post.url | relative_url }}">
+      <p class="card-cat">{{ post.categories | first | replace: "-", " " }}</p>
+      <h3>{{ post.title }}</h3>
+      {% if post.title_es %}<p class="card-es">{{ post.title_es }}</p>{% endif %}
+      <p class="card-excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+      <p class="card-meta">{{ post.date | date: "%b %-d, %Y" }} · Read →</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>

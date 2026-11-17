@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand-mark">M</span>
+        <span class="brand-text">MainEntry <span class="brand-accent">Journal</span></span>
+      </a>
+      <nav class="nav">
+        <a href="{{ '/' | relative_url }}">Articles</a>
+        <a href="{{ '/topics/' | relative_url }}">Topics</a>
+        <a class="nav-cta" href="{{ site.community_url }}" target="_blank" rel="noopener">Join free community</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <section class="community-band">
+    <div class="wrap band-inner">
+      <div>
+        <p class="band-kicker">FREE · GRATIS</p>
+        <h2>Learn AI with people like you.<br><span>Aprende IA con gente como tú.</span></h2>
+        <p>Daily tips on AI, getting found online, online safety and ADHD-friendly work — in English and Spanish. Questions answered by Maria.</p>
+      </div>
+      <a class="btn btn-light" href="{{ site.community_url }}" target="_blank" rel="noopener">Join Plugin &amp; Progress →</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p><strong>MainEntry LLC</strong> · Maria Myers · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p>🇧🇷 Falamos português · 🇪🇸 Hablamos español</p>
+      <p class="small">Articles are for education, not legal, financial or medical advice. Prices and features change — check the official site before you buy.</p>
+    </div>
+  </footer>
+</body>
+</html>

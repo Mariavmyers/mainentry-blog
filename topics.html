@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Topics · Temas — MainEntry Journal"
+permalink: /topics/
+---
+<section class="wrap topics">
+  <h1 class="section-title">Topics <span>· Temas</span></h1>
+  {% assign cats = site.categories | sort %}
+  {% for cat in cats %}
+  <div class="topic">
+    <h2 id="{{ cat[0] }}">{{ cat[0] | replace: "-", " " }}</h2>
+    <ul>
+      {% for post in cat[1] %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="muted">· {{ post.date | date: "%b %-d, %Y" }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>

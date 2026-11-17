@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-hero">
+    <div class="wrap narrow">
+      {% if page.categories.size > 0 %}
+      <p class="post-cat">{{ page.categories | first | replace: "-", " " }}</p>
+      {% endif %}
+      <h1>{{ page.title }}</h1>
+      {% if page.title_es %}<p class="post-title-es">{{ page.title_es }}</p>{% endif %}
+      <p class="post-meta">By {{ page.author }} · {{ page.date | date: "%B %-d, %Y" }} · {{ content | number_of_words | divided_by: 220 | plus: 1 }} min read</p>
+      {% if page.has_spanish %}<a class="lang-jump" href="#espanol">🇪🇸 Leer en español ↓</a>{% endif %}
+    </div>
+  </header>
+
+  <div class="wrap narrow post-body">
+    {{ content }}
+
+    <aside class="cta-box">
+      <p class="cta-title">Want help putting this to work? · ¿Quieres ayuda para aplicarlo?</p>
+      <p>Join my free community for daily tips, or email me for done-for-you help.<br>
+      Únete a mi comunidad gratis para tips diarios, o escríbeme si quieres que lo haga por ti.</p>
+      <div class="cta-actions">
+        <a class="btn" href="{{ site.community_url }}" target="_blank" rel="noopener">Join free · Únete gratis</a>
+        <a class="btn btn-outline" href="mailto:{{ site.email }}">Email Maria</a>
+      </div>
+    </aside>
+  </div>
+</article>
