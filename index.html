@@ -3,24 +3,43 @@ layout: default
 title: "MainEntry Journal — AI, small business & smart growth"
 ---
 <section class="home-hero">
-  <div class="wrap">
-    <p class="hero-kicker">English · Español</p>
-    <h1>Use AI to grow your business — <span class="hl-orange">without the hype.</span></h1>
-    <p class="hero-sub">Plain-language articles on getting found on Google &amp; ChatGPT, staying safe online, working with ADHD, and real ways to earn with AI. <span class="es">Artículos claros sobre IA, negocios y crecimiento.</span></p>
-    <div class="hero-actions">
-      <a class="btn" href="{{ site.community_url }}" target="_blank" rel="noopener">Join the free community</a>
-      <a class="btn btn-outline-light" href="#latest">Read the latest ↓</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hero-kicker">English · Español</p>
+      <h1>Use AI to grow your business — <span class="hl-orange">without the hype.</span></h1>
+      <p class="hero-sub">Free, plain-language guides you can use today. <span class="es">Guías claras y gratis, en español también.</span></p>
     </div>
+    {% assign feature = site.posts.first %}
+    {% if feature %}
+    <a class="feature" href="{{ feature.url | relative_url }}">
+      <span class="feature-badge">New · Nuevo</span>
+      <p class="card-cat">{{ feature.categories | first | replace: "-", " " }}</p>
+      <h2>{{ feature.title }}</h2>
+      {% if feature.title_es %}<p class="feature-es">{{ feature.title_es }}</p>{% endif %}
+      <p class="feature-excerpt">{{ feature.description | default: feature.excerpt | strip_html | truncate: 160 }}</p>
+      <span class="feature-cta">Read the article →</span>
+    </a>
+    {% endif %}
+    <nav class="topic-chips" aria-label="Topics">
+      <p class="chips-label">Or pick a topic · O elige un tema</p>
+      <a href="{{ '/topics/#ai-visibility' | relative_url }}">📍 Get found on Google &amp; AI</a>
+      <a href="{{ '/topics/#make-money-with-ai' | relative_url }}">💵 Earn with AI</a>
+      <a href="{{ '/topics/#ai-tools' | relative_url }}">🛠️ AI tools, step by step</a>
+      <a href="{{ '/topics/#online-safety' | relative_url }}">🛡️ Stay safe online</a>
+      <a href="{{ '/topics/#adhd-focus' | relative_url }}">🎯 ADHD &amp; focus</a>
+      <a href="{{ '/topics/#entrepreneurship' | relative_url }}">🚀 Solo business</a>
+      <a href="{{ '/topics/#ai-news' | relative_url }}">📰 AI news</a>
+    </nav>
   </div>
 </section>
 
 <section class="wrap" id="latest">
-  <h2 class="section-title">Latest articles <span>· Artículos recientes</span></h2>
+  <h2 class="section-title">More articles <span>· Más artículos</span></h2>
   {% if site.posts.size == 0 %}
   <p>First article coming soon.</p>
   {% endif %}
   <div class="grid">
-    {% for post in site.posts %}
+    {% for post in site.posts offset: 1 %}
     <a class="card" href="{{ post.url | relative_url }}">
       <p class="card-cat">{{ post.categories | first | replace: "-", " " }}</p>
       <h3>{{ post.title }}</h3>
